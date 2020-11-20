@@ -16,16 +16,16 @@
          </font>
       </Label>
       <Label layoutX="120.0" layoutY="70.0" text="Search By Username" />
-      <TextField fx:id="UserNameField" layoutX="120.0" layoutY="95.0" prefHeight="26.0" prefWidth="275.0" text="Username" />
-      <Button fx:id="SearchButton" layoutX="420.0" layoutY="95.0" mnemonicParsing="false" onAction="#searchUsers" prefHeight="26.0" prefWidth="100.0" text="Search" />
-      <TableView layoutX="40.0" layoutY="169.0" prefHeight="243.0" prefWidth="560.0">
+      <TextField fx:id="usernameField" layoutX="120.0" layoutY="95.0" prefHeight="26.0" prefWidth="275.0" text="Username" />
+      <Button fx:id="searchButton" layoutX="420.0" layoutY="95.0" mnemonicParsing="false" onAction="#searchUsers" prefHeight="26.0" prefWidth="100.0" text="Search" />
+      <TableView fx:id="userTable" layoutX="40.0" layoutY="169.0" prefHeight="243.0" prefWidth="560.0">
         <columns>
-          <TableColumn fx:id="IdColumn" prefWidth="52.0" text="ID" />
-          <TableColumn fx:id="UsernameColumn" prefWidth="111.0" text="Username" />
-            <TableColumn fx:id="FirstNameColumn" prefWidth="97.0" text="First Name" />
-            <TableColumn fx:id="LastNameColumn" prefWidth="94.0" text="Last Name" />
-            <TableColumn fx:id="EmailColumn" prefWidth="89.0" text="Email" />
-            <TableColumn fx:id="DateOfBirthColumn" prefWidth="116.0" text="Date of Birth" />
+          <TableColumn fx:id="idColumn" prefWidth="52.0" text="ID" />
+          <TableColumn fx:id="usernameColumn" prefWidth="111.0" text="Username" />
+            <TableColumn fx:id="firstnameColumn" prefWidth="97.0" text="First Name" />
+            <TableColumn fx:id="lastnameColumn" prefWidth="94.0" text="Last Name" />
+            <TableColumn fx:id="emailColumn" prefWidth="89.0" text="Email" />
+            <TableColumn fx:id="dateOfBirthColumn" prefWidth="116.0" text="Date of Birth" />
         </columns>
       </TableView>
     </children>
