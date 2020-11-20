@@ -164,6 +164,34 @@ public class FXMLDocumentController implements Initializable
         getUserTable().refresh();
     }
     
+    @FXML
+    public void advancedSearchUsers()
+    {
+        //Read text in search input field
+        String searchInput = getUsernameField().getText();
+        
+        //Add wildcard
+        searchInput += "%";
+        
+        //Create query based on input
+        Query query = getEntityManager().createNamedQuery("Usermodel.findByUsernameAdvanced");
+        query.setParameter("username", searchInput);
+        
+        //Save the query's result list to a Usermodel list
+        List<Usermodel> users = query.getResultList();
+        
+        //Initialize ObservableList and add users to it
+        ObservableList<Usermodel> userData = FXCollections.observableArrayList();
+        for(Usermodel u : users)
+        {
+            userData.add(u);
+        }
+        
+        //Set ObservableList as the TableView items list
+        getUserTable().setItems(userData);
+        getUserTable().refresh();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {

@@ -28,5 +28,6 @@
             <TableColumn fx:id="dateOfBirthColumn" prefWidth="116.0" text="Date of Birth" />
         </columns>
       </TableView>
+      <Button fx:id="advancedSearchButton" layoutX="420.0" layoutY="131.0" mnemonicParsing="false" onAction="#advancedSearchUsers" prefHeight="26.0" prefWidth="149.0" text="Advanced Search" />
     </children>
 </AnchorPane>
