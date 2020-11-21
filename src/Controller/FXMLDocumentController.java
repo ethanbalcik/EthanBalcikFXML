@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -201,12 +202,24 @@ public class FXMLDocumentController implements Initializable
     {
         try
         {
+            //Get selected user
             Usermodel selectedUser = getUserTable().getSelectionModel().getSelectedItem();
+            
+            //Load FXML detail view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/DetailedModelView.fxml"));
             Parent detailView = loader.load();
+            
+            //Instantiate scene, give it the parent we instantiated
             Scene scene = new Scene(detailView);
+            
+            //Get the controller, init selected user data
             DetailedModelController controller = loader.getController();
             controller.initUserData(selectedUser);
+            
+            //Deactivate back button
+            controller.getBackButton().setVisible(false);
+            
+            //Instantiate new stage, give it the scene we instantiated, set visible
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
@@ -218,9 +231,34 @@ public class FXMLDocumentController implements Initializable
     }
     
     @FXML
-    public void showDetailsInPlace()
+    public void showDetailsInPlace(ActionEvent event)
     {
-        System.out.println("clicked!");
+        try
+        {
+            //Get selected user
+            Usermodel selectedUser = getUserTable().getSelectionModel().getSelectedItem();
+            
+            //Load FXML detail view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/DetailedModelView.fxml"));
+            Parent detailView = loader.load();
+            
+            //Instantiate scene, give it the parent we instantiated, also get current scene from event source
+            Scene detailScene = new Scene(detailView);
+            Scene currentScene = ((Node)event.getSource()).getScene();
+            
+            //Get the controller, init selected user data
+            DetailedModelController controller = loader.getController();
+            controller.initUserData(selectedUser);
+            
+            //Instantiate new stage, give it the scene we instantiated, set visible
+            Stage stage = (Stage) currentScene.getWindow();
+            stage.setScene(detailScene);
+            stage.show();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
     
     @Override
