@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DetailedModelController">
+   <children>
+      <Label fx:id="usernameLabel" layoutX="208.0" layoutY="142.0" text="Username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="208.0" layoutY="202.0" text="User ID" />
+      <Label layoutX="208.0" layoutY="232.0" text="First Name" />
+      <Label layoutX="208.0" layoutY="262.0" text="Last Name" />
+      <Label layoutX="208.0" layoutY="322.0" text="Date of Birth" />
+      <Label layoutX="208.0" layoutY="292.0" text="Email" />
+      <Label fx:id="userIdLabel" layoutX="315.0" layoutY="202.0" text="User ID" />
+      <Label fx:id="firstnameLabel" layoutX="315.0" layoutY="232.0" text="First Name" />
+      <Label fx:id="lastnameLabel" layoutX="315.0" layoutY="262.0" text="Last Name" />
+      <Label fx:id="dateOfBirthLabel" layoutX="315.0" layoutY="322.0" text="Date of Birth" />
+      <Label fx:id="emailLabel" layoutX="315.0" layoutY="292.0" text="Email" />
+      <ImageView fx:id="userPhotoDisplay" fitHeight="100.0" fitWidth="100.0" layoutX="540.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>

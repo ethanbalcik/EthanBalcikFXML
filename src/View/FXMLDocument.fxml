@@ -29,5 +29,7 @@
         </columns>
       </TableView>
       <Button fx:id="advancedSearchButton" layoutX="420.0" layoutY="131.0" mnemonicParsing="false" onAction="#advancedSearchUsers" prefHeight="26.0" prefWidth="149.0" text="Advanced Search" />
+      <Button layoutX="481.0" layoutY="429.0" mnemonicParsing="false" onAction="#showDetails" prefHeight="26.0" prefWidth="119.0" text="Show Details" />
+      <Button layoutX="286.0" layoutY="429.0" mnemonicParsing="false" onAction="#showDetailsInPlace" prefHeight="26.0" prefWidth="183.0" text="Show Details In-Place" />
     </children>
 </AnchorPane>
